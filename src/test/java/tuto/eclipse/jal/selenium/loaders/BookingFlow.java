@@ -1,7 +1,9 @@
 package tuto.eclipse.jal.selenium.loaders;
 
 import tuto.eclipse.jal.constants.JALConstants;
+import tuto.eclipse.jal.selenium.pageObjects.disponibilityPage.DisponibilityPage;
 import tuto.eclipse.jal.selenium.pageObjects.homePage.HomePage;
+import tuto.eclipse.jal.selenium.pageObjects.passengerPage.PassengerPage;
 
 public class BookingFlow {
 
@@ -17,11 +19,19 @@ public class BookingFlow {
 		home.run();
 	}
 
-	protected void avaiPageRun() {
-		// TODO on ajoutera la classe Avai
+	protected void disponibilityPageRun() {
+		DisponibilityPage disponibility = new DisponibilityPage();
+		disponibility.run();
+	}
+
+	protected void passengerPageRun() {
+		PassengerPage passenger = new PassengerPage();
+		passenger.run();
 	}
 
 	protected void run() {
 		homePageRun();
+		disponibilityPageRun();
+		passengerPageRun();
 	}
 }
